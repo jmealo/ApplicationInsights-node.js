@@ -1,10 +1,10 @@
-import { createClientLogger } from "@azure/logger";
+import { createClientLogger, AzureLogger } from "@azure/logger";
 
 class Logging {
     public static enableDebug = false;
     public static disableWarnings = false;
     public static disableErrors = false;
-    public static logger = createClientLogger('ApplicationInsights');
+    public static logger = createClientLogger('ApplicationInsights') as AzureLogger;
 
     public static debug(message?: any, ...optionalParams: any[]) {
         if(Logging.enableDebug) {
